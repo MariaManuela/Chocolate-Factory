@@ -2,8 +2,9 @@ h1 {
   color: brown;
 }
 
-.logo {
-  background-image: url(./images/melted-chocolate.png);
+.app {
+  background: url(./public/images/melted-chocolate.png), #e1a03e;
   background-size: cover;
   width: 100%;
+  height: 100vh;
 }
