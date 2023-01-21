@@ -1,9 +1,10 @@
 import React from "react";
-import HeaderBar from "./components/HeaderBar";
+import RegisterForm from "./components/RegisterForm.jsx";
+import "./App.scss";
 function App() {
   return (
-    <div className="App">
-      <HeaderBar />
+    <div className="app">
+      <RegisterForm />
     </div>
   );
 }

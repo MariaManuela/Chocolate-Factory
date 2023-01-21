@@ -26,10 +26,14 @@ module.exports = {
         test: /\.(sa|sc|c)ss$/, // styles files
         use: ["style-loader", "css-loader", "sass-loader"],
       },
+      // {
+      //   test: /\.(png|woff|woff2|eot|ttf|svg|jpg)$/, // to import images and fonts
+      //   loader: "url-loader",
+      //   options: { limit: false },
+      // },
       {
-        test: /\.(png|woff|woff2|eot|ttf|svg|jpg)$/, // to import images and fonts
-        loader: "url-loader",
-        options: { limit: false },
+        test: /\.(png|woff|woff2|eot|ttf|svg|jpg)$/, // background images
+        type: "asset/resource",
       },
     ],
   },
