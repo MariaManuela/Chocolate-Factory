@@ -1,6 +1,11 @@
 import React from "react";
-const App = () => {
-  return <h1>Hello React</h1>;
-};
+import HeaderBar from "./components/HeaderBar";
+function App() {
+  return (
+    <div className="App">
+      <HeaderBar />
+    </div>
+  );
+}
 
 export default App;
