@@ -1,10 +1,12 @@
 import React from "react";
-import RegisterForm from "./components/RegisterForm.jsx";
+import Navigation from "./components/Navigation.jsx";
+import GetMovies from "./components/Movies.jsx";
 import "./App.scss";
 function App() {
   return (
     <div className="app">
-      <RegisterForm />
+      <Navigation />
+      <GetMovies />
     </div>
   );
 }
