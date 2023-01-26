@@ -1,8 +1,19 @@
-// .movies-container {
-//   height: 50vh;
-//   background-color: pink;
-// }
+.movies-container {
+  display: flex;
+  gap: 10px;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
 
-.req-button {
-  background-color: brown;
+.movie-photo {
+  height: 400px;
+}
+
+.movies-item {
+  padding: 5px;
+  font-size: 10px;
+  text-align: center;
 }
