@@ -1,15 +1,12 @@
-import { Card } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import MoviePicture from "./MoviePicture.jsx";
-import { Grid } from "@mui/material";
+import * as Constans from "../constants/Constants.jsx";
 
 export default function Movies() {
   const [movies, setMovies] = useState([movies]);
 
-  const API_KEY = "dcb4a6c3f8dfa2fa63b84227c13b3b75";
-
   useEffect(() => {
-    const url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=thor`;
+    const url = `https://api.themoviedb.org/3/search/movie?api_key=${Constans.API_KEY}&query=thor`;
 
     const fetchData = async () => {
       try {
@@ -31,7 +28,7 @@ export default function Movies() {
       {movies?.results?.map((movie) => {
         return (
           <div className="movies-item" key={movie.id}>
-            <MoviePicture value={movie.poster_path} />
+            <MoviePicture className="movie-photo" test="s" />
             <h2 className="movie-title">{movie.title}</h2>
           </div>
         );
