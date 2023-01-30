@@ -3,7 +3,6 @@ import * as Constans from "../constants/Constants.jsx";
 
 export default function MoviePicture(props) {
   const [img, setImg] = useState();
-  console.log(props);
 
   const url = `https://image.tmdb.org/t/p/w500${props.posterPath}?api_key=${Constans.API_KEY}`;
   const fetchImage = async () => {

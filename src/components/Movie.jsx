@@ -6,7 +6,12 @@ import ScoreChip from "./first_page/ScoreChip.jsx";
 export default function Movie({ movie, chip }) {
   return (
     <Grid sx={{ paddingRight: "10px" }} className="movies-item" key={movie.id}>
-      <Grid className="progress-container" sx={{ position: "relative" }}>
+      <Grid
+        className="progress-container"
+        sx={{
+          position: "relative",
+        }}
+      >
         <MoviePicture
           className="discover-movie-photo"
           posterPath={movie.poster_path}

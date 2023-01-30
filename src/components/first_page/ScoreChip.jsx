@@ -43,6 +43,19 @@ export default function ScoreChip(props) {
             variant="caption"
             component="div"
             color="text.secondary"
+            sx={{
+              color: "#fff",
+              fontFamily: "oswald",
+              fontSize: "15px",
+              fontWeight: "bolder",
+              lineHeight: "60px",
+              textTransform: "uppercase",
+              textAlign: "center",
+              letterSpacing: "-1px",
+              textShadow: "0 0 3px #001b2e, 1px 1px 1px #001b2e",
+              marginRight: "2px",
+              marginBottom: "2px",
+            }}
           >{`${props.value}`}</Typography>
         </Box>
       </Box>
