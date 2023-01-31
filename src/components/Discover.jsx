@@ -1,7 +1,8 @@
 import { Grid } from "@mui/material";
-import React, { useState, useEffect } from "react";
-import * as Constans from "../../constants/Constants.jsx";
-import Movie from "../Movie.jsx";
+import React, { useState, useEffect, useContext } from "react";
+import * as Constans from "../constants/Constants.jsx";
+import Movie from "./Movie.jsx";
+import MovieCarousel from "./Carousel.jsx";
 
 export default function Discover() {
   const [movies, setMovies] = useState([]);
@@ -26,6 +27,7 @@ export default function Discover() {
 
   return (
     <div className="discover-movie-part">
+      <MovieCarousel />
       <div
         className="discover-movies-container"
         style={{ width: "80%", overflow: "auto", scrollBehavior: "smooth" }}

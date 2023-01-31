@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material";
 import React from "react";
 import MoviePicture from "./MoviePicture.jsx";
-import ScoreChip from "./first_page/ScoreChip.jsx";
+import ScoreChip from "./ScoreChip.jsx";
 
 export default function Movie({ movie, chip }) {
   return (

@@ -1,17 +1,19 @@
 import React from "react";
 import Navigation from "./components/Navigation.jsx";
-import Movies from "./components/Movies.jsx";
-import Discover from "./components/first_page/Discover.jsx";
-import MovieCarousel from "./components/Carousel.jsx";
+import Discover from "./components/Discover.jsx";
+
+import { pagesMapping, RoutingContext } from "./routing/Routing.js";
+import { useContext } from "react";
+
 import "./App.scss";
 
 function App() {
+  const { page } = useContext(RoutingContext);
   return (
     <div className="app">
       <Navigation />
-      <MovieCarousel />
-      <Discover />
-      {/* <Movies /> */}
+      {pagesMapping.home === page && <Discover />}
+      {pagesMapping.movie === page && <MoviePage />}
     </div>
   );
 }
