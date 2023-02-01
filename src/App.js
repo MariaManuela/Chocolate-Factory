@@ -1,6 +1,7 @@
 import React from "react";
 import Navigation from "./components/Navigation.jsx";
 import Discover from "./components/Discover.jsx";
+import MoviePage from "./components/MoviePage.jsx";
 
 import { pagesMapping, RoutingContext } from "./routing/Routing.js";
 import { useContext } from "react";

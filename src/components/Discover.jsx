@@ -3,9 +3,11 @@ import React, { useState, useEffect, useContext } from "react";
 import * as Constans from "../constants/Constants.jsx";
 import Movie from "./Movie.jsx";
 import MovieCarousel from "./Carousel.jsx";
+import { RoutingContext, pagesMapping } from "../routing/Routing.js";
 
 export default function Discover() {
   const [movies, setMovies] = useState([]);
+  const { setPage } = useContext(RoutingContext);
 
   useEffect(() => {
     const url = `https://api.themoviedb.org/3/discover/movie?api_key=${Constans.API_KEY}`;
@@ -36,6 +38,9 @@ export default function Discover() {
           return <Movie movie={movie} chip />;
         })}
       </div>
+      <p className="App-link" onClick={() => setPage(pagesMapping.movie)}>
+        About
+      </p>
     </div>
   );
 }
