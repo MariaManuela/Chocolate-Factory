@@ -34,12 +34,9 @@ export default function Discover() {
         style={{ width: "80%", overflow: "auto", scrollBehavior: "smooth" }}
       >
         {movies?.results?.map((movie) => {
-          return <Movie movie={movie} chip />;
+          return <Movie key={movie.id} movie={movie} chip />;
         })}
       </div>
-      <p className="App-link" onClick={() => setPage(pagesMapping.movie)}>
-        About
-      </p>
     </div>
   );
 }
