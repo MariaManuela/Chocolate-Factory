@@ -41,7 +41,7 @@
   display: inline-flex;
   justify-content: space-between;
   flex-wrap: nowrap;
-  height: 50vh;
+  height: 45vh;
 }
 
 .discover-movie-photo {
@@ -61,4 +61,8 @@
 .progress-container {
   display: flex;
   margin-top: 10px;
+}
+
+.first-circle {
+  color: white;
 }
