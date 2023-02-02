@@ -75,7 +75,7 @@ export default function ScoreChip(props) {
               letterSpacing: "-1px",
               textShadow: "0 0 1px #001b2e, 1px 2px 1px #001b2e",
               marginRight: "2px",
-              marginBottom: "4px",
+              marginBottom: "7px",
               marginLeft: "1px",
             }}
           >{`${props.value}`}</Typography>

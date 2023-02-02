@@ -66,3 +66,29 @@
 .first-circle {
   color: white;
 }
+
+.blue-movie-container {
+  background-color: #adb6c4;
+  width: 100vw;
+  height: 70vh;
+  position: absolute;
+}
+
+.movie-details-page-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  margin-top: 10px;
+}
+
+.details-image {
+  display: flex;
+  justify-content: space-between;
+  padding: 45px;
+}
+
+.details-picture {
+  height: 500px;
+  margin-left: 200px;
+  opacity: 100%;
+}

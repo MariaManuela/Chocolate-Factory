@@ -20,21 +20,7 @@ export default function MoviePicture(props) {
 
   return (
     <div>
-      <Button
-        variant="text"
-        sx={{
-          backgroundColor: "transparent",
-          padding: "0px",
-          "& .css-8tpde2-MuiButtonBase-root-MuiButton-root": {
-            color: "transparent",
-            padding: "0px 0px",
-          },
-        }}
-      >
-        <Link to={`movie/${props.movieId}`}>
-          <img src={img} className={props.className}></img>
-        </Link>
-      </Button>
+      <img src={img} className={props.className}></img>
     </div>
   );
 }

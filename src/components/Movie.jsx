@@ -4,6 +4,7 @@ import MoviePicture from "./MoviePicture.jsx";
 import ScoreChip from "./ScoreChip.jsx";
 import { Link } from "react-router-dom";
 import MovieDescription from "./MovieDescription.jsx";
+import Button from "@mui/material/Button";
 
 export default function Movie({ movie, chip }) {
   return (
@@ -14,15 +15,28 @@ export default function Movie({ movie, chip }) {
           position: "relative",
         }}
       >
-        <MoviePicture
-          className="discover-movie-photo"
-          posterPath={movie.poster_path}
-          movieId={movie.id}
-        />
-        {chip && <ScoreChip value={movie.vote_average} />}
+        <Button
+          variant="text"
+          sx={{
+            backgroundColor: "transparent",
+            padding: "0px",
+            "& .css-8tpde2-MuiButtonBase-root-MuiButton-root": {
+              color: "transparent",
+              padding: "0px 0px",
+            },
+          }}
+        >
+          <Link to={`movie/${movie.id}`}>
+            <MoviePicture
+              className="discover-movie-photo"
+              posterPath={movie.poster_path}
+              movieId={movie.id}
+            />
+            {chip && <ScoreChip value={movie.vote_average} />}
+          </Link>
+        </Button>
       </Grid>
       <MovieDescription value={movie.title} />
-      {/* <h2 className="vote-count">{movie.vote_count}</h2> */}
     </Grid>
   );
 }
