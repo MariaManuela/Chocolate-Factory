@@ -2,6 +2,7 @@ import { Grid } from "@mui/material";
 import React from "react";
 import MoviePicture from "./MoviePicture.jsx";
 import ScoreChip from "./ScoreChip.jsx";
+import { Link } from "react-router-dom";
 
 export default function Movie({ movie, chip }) {
   return (
@@ -21,6 +22,15 @@ export default function Movie({ movie, chip }) {
       <h2 className="discover-movie-title">{movie.title}</h2>
       <h2 className="vote-average">{movie.vote_average}</h2>
       <h2 className="vote-count">{movie.vote_count}</h2>
+      <div id="sidebar">
+        <nav>
+          <ul>
+            <li>
+              <Link to={`movie/${movie.id}`}>Movie details</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </Grid>
   );
 }

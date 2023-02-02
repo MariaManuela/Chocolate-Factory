@@ -1,5 +1,4 @@
 import { Grid } from "@mui/material";
-import { width } from "@mui/system";
 import React from "react";
 
 export default function MovieCarousel(props) {
