@@ -1,5 +1,7 @@
 import React from "react";
 import Navigation from "./components/Navigation.jsx";
+import { Provider } from "react-redux";
+import store from "./state/AppState.jsx";
 
 import { Outlet } from "react-router-dom";
 
@@ -8,10 +10,12 @@ import "./App.scss";
 function App() {
   return (
     <>
-      <Navigation />
-      <div id="first-page">
-        <Outlet />
-      </div>
+      <Provider store={store}>
+        <Navigation />
+        <div id="first-page">
+          <Outlet />
+        </div>
+      </Provider>
     </>
   );
 }

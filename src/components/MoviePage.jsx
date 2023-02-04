@@ -3,7 +3,10 @@ import Movie from "./Movie.jsx";
 import React, { useState, useEffect } from "react";
 import MoviePicture from "./MoviePicture.jsx";
 import * as Constans from "../constants/Constants.jsx";
-import { Grid } from "@mui/material";
+import { Button, Grid, IconButton } from "@mui/material";
+import HeartButton from "./HeartButton.jsx";
+import ScoreChip from "./ScoreChip.jsx";
+import { Box } from "@mui/material";
 
 export default function MoviePage(props) {
   let { movieId } = useParams();
@@ -47,6 +50,9 @@ export default function MoviePage(props) {
               );
             })
             .slice(0, 1)}
+        </div>
+        <div className="action-buttons">
+          <HeartButton movieId={movieId} />
         </div>
       </div>
     </div>
