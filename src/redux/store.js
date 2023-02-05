@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import addToFavReducer from "../reducers/MoviePage.jsx";
+import moviesReducer from "./reducers/moviesReducer.js";
 
 export default configureStore({
   reducer: {
-    addToFav: addToFavReducer,
+    moviesReducer: moviesReducer,
   },
 });

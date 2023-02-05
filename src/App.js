@@ -1,7 +1,7 @@
 import React from "react";
 import Navigation from "./components/Navigation.jsx";
 import { Provider } from "react-redux";
-import store from "./state/AppState.jsx";
+import store from "./redux/store.js";
 
 import { Outlet } from "react-router-dom";
 
