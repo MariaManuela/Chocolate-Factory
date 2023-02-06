@@ -37,9 +37,10 @@ export default function MovieDetailsContainer({ posterPath, id }) {
             display: "flex",
             justifyContent: "flex-start",
             margin: "30px",
+            alignItems: "center",
           }}
         >
-          <HeartButton />
+          <HeartButton className="heart-button" />
         </Grid>
       </Container>
     </Grid>
