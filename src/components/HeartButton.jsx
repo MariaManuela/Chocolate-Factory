@@ -28,9 +28,10 @@ export default function HeartButton({ movieId }) {
       sx={{
         backgroundColor: "#001b2e",
         color: "white",
-        height: "60px",
-        width: "60px",
+        height: "45px",
+        width: "45px",
         disableElevation: "false",
+        left: "250px",
       }}
     >
       {isFavourite ? (

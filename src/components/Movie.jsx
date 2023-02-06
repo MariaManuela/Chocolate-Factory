@@ -32,7 +32,14 @@ export default function Movie({ movie, chip }) {
               posterPath={movie.poster_path}
               movieId={movie.id}
             />
-            {chip && <ScoreChip value={movie.vote_average} />}
+            {chip && (
+              <ScoreChip
+                top="-10px"
+                right="-10px"
+                position="absolute"
+                value={movie.vote_average}
+              />
+            )}
           </Link>
         </Button>
       </Grid>

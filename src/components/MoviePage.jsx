@@ -47,7 +47,11 @@ export default function MoviePage(props) {
           ?.map((movie, id) => {
             id += 1;
             return (
-              <MovieDetailsContainer key={id} posterPath={movie.file_path} />
+              <MovieDetailsContainer
+                key={id}
+                posterPath={movie.file_path}
+                voteAverage={movie.vote_average}
+              />
             );
           })[0]
       }
