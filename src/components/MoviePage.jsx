@@ -40,21 +40,17 @@ export default function MoviePage(props) {
   }, []);
 
   return (
-    <div className="movie-details-page-container">
-      <div className="blue-movie-container">
-        {/* <div className="details-image"> */}
-        {
-          movies?.posters
-            ?.filter((poster) => poster.iso_639_1 === "en")
-            ?.map((movie, id) => {
-              id += 1;
-              return (
-                <MovieDetailsContainer key={id} posterPath={movie.file_path} />
-              );
-            })[0]
-        }
-      </div>
-    </div>
-    // </div>
+    <>
+      {
+        movies?.posters
+          ?.filter((poster) => poster.iso_639_1 === "en")
+          ?.map((movie, id) => {
+            id += 1;
+            return (
+              <MovieDetailsContainer key={id} posterPath={movie.file_path} />
+            );
+          })[0]
+      }
+    </>
   );
 }
