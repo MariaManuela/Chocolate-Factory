@@ -7,6 +7,7 @@ import {
   addToFavourites,
   removeFromFavourites,
 } from "../redux/actions/movieActions";
+import { red } from "@mui/material/colors";
 
 export default function HeartButton({ movieId }) {
   const isFavourite = useSelector((state) =>
@@ -21,8 +22,22 @@ export default function HeartButton({ movieId }) {
       onClick={() => {
         dispatch(toggleFavourite(movieId));
       }}
+      disableRipple={true}
+      disableFocusRipple={true}
+      disableTouchRipple={true}
+      sx={{
+        backgroundColor: "#001b2e",
+        color: "white",
+        height: "60px",
+        width: "60px",
+        disableElevation: "false",
+      }}
     >
-      {isFavourite ? <FavoriteIcon /> : <FavoriteBorderIcon />}
+      {isFavourite ? (
+        <FavoriteIcon sx={{ color: "red" }} />
+      ) : (
+        <FavoriteBorderIcon />
+      )}
     </IconButton>
   );
 }
