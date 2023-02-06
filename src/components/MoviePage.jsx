@@ -7,14 +7,13 @@ import { Button, Grid, IconButton } from "@mui/material";
 import HeartButton from "./HeartButton.jsx";
 import ScoreChip from "./ScoreChip.jsx";
 import { Box } from "@mui/material";
+import MovieDetailsContainer from "./MovieDetailsContainer.jsx";
 
 export default function MoviePage(props) {
   let { movieId } = useParams();
-
-  console.log(props.posterPath);
-  let posterPath = "";
-
   const [movies, setMovies] = useState([movies]);
+
+  let iso = "";
 
   useEffect(() => {
     const url = `https://api.themoviedb.org/3/movie/${movieId}/images?api_key=${Constans.API_KEY}`;
@@ -24,7 +23,13 @@ export default function MoviePage(props) {
         const response = await fetch(url)
           .then((response) => response.json())
           .then((data) => {
+            for (let isoData of data.posters) {
+              if (isoData.iso_639_1 === "en") {
+                iso = isoData.iso_639_1;
+              }
+            }
             setMovies(data);
+            // setMovies(data);
           });
       } catch (error) {
         console.log("error", error);
@@ -37,24 +42,19 @@ export default function MoviePage(props) {
   return (
     <div className="movie-details-page-container">
       <div className="blue-movie-container">
-        <div className="details-image">
-          {movies?.posters
+        {/* <div className="details-image"> */}
+        {
+          movies?.posters
+            ?.filter((poster) => poster.iso_639_1 === "en")
             ?.map((movie, id) => {
               id += 1;
               return (
-                <MoviePicture
-                  className="details-picture"
-                  key={id}
-                  posterPath={movie.file_path}
-                />
+                <MovieDetailsContainer key={id} posterPath={movie.file_path} />
               );
-            })
-            .slice(0, 1)}
-        </div>
-        <div className="action-buttons">
-          <HeartButton movieId={movieId} />
-        </div>
+            })[0]
+        }
       </div>
     </div>
+    // </div>
   );
 }
