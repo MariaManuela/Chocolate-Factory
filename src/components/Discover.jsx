@@ -34,7 +34,14 @@ export default function Discover() {
         style={{ width: "80%", overflow: "auto", scrollBehavior: "smooth" }}
       >
         {movies?.results?.map((movie) => {
-          return <Movie key={movie.id} movie={movie} chip />;
+          return (
+            <Movie
+              key={movie.id}
+              movie={movie}
+              backgroundImg={movie.poster_path}
+              chip
+            />
+          );
         })}
       </div>
     </div>

@@ -24,9 +24,6 @@ export default function MoviePage(props) {
           .then((response) => response.json())
           .then((data) => {
             for (let isoData of data.posters) {
-              if (isoData.iso_639_1 === "en") {
-                iso = isoData.iso_639_1;
-              }
             }
             setMovies(data);
             // setMovies(data);

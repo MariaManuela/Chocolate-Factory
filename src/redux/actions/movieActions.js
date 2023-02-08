@@ -13,3 +13,10 @@ export const removeFromFavourites = (movieId) => {
     payload: { id: movieId },
   };
 };
+
+export const setBannerBackgroundImage = (backgroundSrc) => {
+  return {
+    type: MovieAction.SET_BANNER_BACKGROUND_IMAGE,
+    payload: { src: backgroundSrc },
+  };
+};
