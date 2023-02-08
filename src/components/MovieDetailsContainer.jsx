@@ -1,22 +1,38 @@
 import { Grid, Grow, Typography } from "@mui/material";
-import { blue, red, yellow } from "@mui/material/colors";
 import { Container } from "@mui/system";
 import React from "react";
 import HeartButton from "./HeartButton.jsx";
 import MoviePicture from "./MoviePicture.jsx";
 import ScoreChip from "./ScoreChip.jsx";
 import { useSelector } from "react-redux";
+import MovieDescription from "./MovieDescription.jsx";
 
-export default function MovieDetailsContainer({ posterPath, id, voteAverage }) {
+export default function MovieDetailsContainer({
+  posterPath,
+  id,
+  voteAverage,
+  movieId,
+}) {
+  let title = "";
+  let description = "";
   const backgroundImage = useSelector((state) => {
     return state.moviesReducer.movieBackgroundPicture.movieBackgroundSrc;
   });
 
+  useSelector((state) => {
+    state.moviesReducer.movieDetails.movieData.map((elem) => {
+      if (elem.id == movieId) {
+        title = elem.title;
+        description = elem.overview;
+      }
+    });
+  });
+
+  console.log(title);
   return (
     <Grid
       sx={{
         background: "rgb(48 116 236 / 10%)",
-        //boxShadow: "0px 4px 20px 5px rgba(30, 60, 110, 0.53) inset",
         padding: "20px",
         width: "100%",
         height: "550px",
@@ -28,13 +44,11 @@ export default function MovieDetailsContainer({ posterPath, id, voteAverage }) {
         objectFit: "contain",
         height: "100%",
         width: "100%",
-        //backgroundImage: `url(${backgroundImage})`,
         backgroundPositionY: "center",
         backgroundRepeat: "no-repeat, no-repeat, repeat-x",
         height: "100%",
         backgroundSize: "cover",
         backgroundPosition: "right 20% bottom 70%",
-        //background: `linear-gradient(to top, #adb6c4, #9907facc), url(${backgroundImage}) no-repeat top center`,
         background: `linear-gradient(to bottom,rgb(58 59 72 / 90%), rgb(11 7 38)), url(${backgroundImage})`,
       }}
     >
@@ -46,6 +60,7 @@ export default function MovieDetailsContainer({ posterPath, id, voteAverage }) {
             posterPath={posterPath}
           />
         </Grid>
+
         <Grid
           sx={{
             width: "80%",
@@ -56,6 +71,19 @@ export default function MovieDetailsContainer({ posterPath, id, voteAverage }) {
             position: "relative",
           }}
         >
+          <Grid sx={{ position: "absolute", top: "100px", marginTop: "10px" }}>
+            <Typography
+              sx={{
+                color: "white",
+                position: "relative",
+                fontSize: "30px",
+                fontFamily: "gill sans, sans-serif",
+                color: "#ffefd3",
+              }}
+            >
+              {title}
+            </Typography>
+          </Grid>
           <ScoreChip
             position="relative"
             className="score-chip-details"
@@ -69,20 +97,44 @@ export default function MovieDetailsContainer({ posterPath, id, voteAverage }) {
             sx={{
               color: "#fff",
               fontFamily: "gill sans, sans-serif",
-              fontSize: "14px",
+              fontSize: "10px",
               fontWeight: "bolder",
-              lineHeight: "60px",
+              lineHeight: "10px",
               textTransform: "uppercase",
               textAlign: "center",
               letterSpacing: "-1px",
               textShadow: "0 0 1px #001b2e, 1px 2px 1px #001b2e",
               position: "absolute",
               left: "85px",
+              color: "#ffefd3",
             }}
           >
             Vote average
           </Typography>
           <HeartButton className="heart-button" />
+          <Grid sx={{ position: "absolute", top: "350px", marginTop: "10px" }}>
+            <Typography
+              sx={{
+                color: "white",
+                position: "relative",
+                fontFamily: "gill sans, sans-serif",
+                color: "#ffefd3",
+              }}
+            >
+              Overview
+            </Typography>
+            <Typography
+              sx={{
+                color: "white",
+                fontStyle: "italic",
+                padding: "10px",
+                fontFamily: "gill sans, sans-serif",
+                color: "#ffefd3",
+              }}
+            >
+              {description}
+            </Typography>
+          </Grid>
         </Grid>
       </Container>
     </Grid>

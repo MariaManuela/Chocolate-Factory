@@ -20,3 +20,10 @@ export const setBannerBackgroundImage = (backgroundSrc) => {
     payload: { src: backgroundSrc },
   };
 };
+
+export const displayMovieDetails = (data) => {
+  return {
+    type: MovieAction.DISPLAY_MOVIE_DETAILS,
+    payload: { data },
+  };
+};

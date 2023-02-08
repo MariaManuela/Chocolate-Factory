@@ -5,6 +5,9 @@ const initialState = {
   movieBackgroundPicture: {
     movieBackgroundSrc: null,
   },
+  movieDetails: {
+    movieData: [],
+  },
 };
 
 export default function moviesReducer(state = initialState, action) {
@@ -28,6 +31,13 @@ export default function moviesReducer(state = initialState, action) {
         ...state,
         movieBackgroundPicture: {
           movieBackgroundSrc: action.payload.src,
+        },
+      };
+    case MovieAction.DISPLAY_MOVIE_DETAILS:
+      return {
+        ...state,
+        movieDetails: {
+          movieData: action.payload.data,
         },
       };
 

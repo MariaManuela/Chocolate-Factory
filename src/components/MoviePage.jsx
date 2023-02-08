@@ -46,6 +46,7 @@ export default function MoviePage(props) {
             return (
               <MovieDetailsContainer
                 key={id}
+                movieId={movieId}
                 posterPath={movie.file_path}
                 voteAverage={movie.vote_average}
               />
