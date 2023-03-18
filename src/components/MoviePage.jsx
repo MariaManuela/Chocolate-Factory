@@ -1,13 +1,10 @@
 import { useParams } from "react-router-dom";
-import Movie from "./Movie.jsx";
 import React, { useState, useEffect } from "react";
-import MoviePicture from "./MoviePicture.jsx";
 import * as Constans from "../constants/Constants.jsx";
-import { Button, Grid, IconButton } from "@mui/material";
-import HeartButton from "./HeartButton.jsx";
-import ScoreChip from "./ScoreChip.jsx";
-import { Box } from "@mui/material";
 import MovieDetailsContainer from "./MovieDetailsContainer.jsx";
+import Actor from "./Actor.jsx";
+import Cast from "./Cast.jsx";
+import { Grid } from "@mui/material";
 
 export default function MoviePage(props) {
   let { movieId } = useParams();

@@ -34,7 +34,7 @@ module.exports = {
       //   options: { limit: false },
       // },
       {
-        test: /\.(png|woff|woff2|eot|ttf|svg|jpg)$/, // background images
+        test: /\.(png|woff|woff2|eot|ttf|svg|jpg|jpeg)$/, // background images
         type: "asset/resource",
       },
     ],

@@ -9,14 +9,14 @@ export default function MovieDescription(props) {
       color="text.secondary"
       sx={{
         color: "black",
-        fontFamily: "gill sans, sans-serif",
-        fontSize: "14px",
-        fontWeight: "bolder",
-        letterSpacing: "0px",
+        fontFamily: "Arial, sans-serif",
         fontSize: "12px",
+        fontWeight: "bold",
+        letterSpacing: "0px",
+        fontSize: "16px",
         textAlign: "start",
-        marginLeft: "15px",
-        marginTop: "15px",
+        marginLeft: "0px",
+        marginTop: "0px",
       }}
     >
       {props.value}
