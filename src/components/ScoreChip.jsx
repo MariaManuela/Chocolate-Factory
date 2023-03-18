@@ -78,7 +78,7 @@ export default function ScoreChip(props) {
               marginBottom: "7px",
               marginLeft: "1px",
             }}
-          >{`${props.value}`}</Typography>
+          >{`${Math.round(props.value * 10) / 10}`}</Typography>
         </Box>
       </Box>
     </Box>
