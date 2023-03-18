@@ -3,10 +3,14 @@ import * as Constans from "../constants/Constants.jsx";
 import Movie from "./Movie.jsx";
 import MovieCarousel from "./Carousel.jsx";
 import { RoutingContext, pagesMapping } from "../routing/Routing.js";
+import { useDispatch } from "react-redux";
+import { displayMovieDetails } from "../redux/actions/movieActions";
 
 export default function Discover() {
   const [movies, setMovies] = useState([]);
   const { setPage } = useContext(RoutingContext);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const url = `https://api.themoviedb.org/3/discover/movie?api_key=${Constans.API_KEY}`;
@@ -17,6 +21,7 @@ export default function Discover() {
           .then((response) => response.json())
           .then((data) => {
             setMovies(data);
+            dispatch(displayMovieDetails(data.results));
           });
       } catch (error) {
         console.log("error", error);
@@ -34,7 +39,14 @@ export default function Discover() {
         style={{ width: "80%", overflow: "auto", scrollBehavior: "smooth" }}
       >
         {movies?.results?.map((movie) => {
-          return <Movie key={movie.id} movie={movie} chip />;
+          return (
+            <Movie
+              key={movie.id}
+              movie={movie}
+              backgroundImg={movie.poster_path}
+              chip
+            />
+          );
         })}
       </div>
     </div>

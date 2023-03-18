@@ -19,8 +19,8 @@ export default function ScoreChip(props) {
     <Box
       sx={{
         position: "absolute",
-        top: "-10px",
-        right: "-10px",
+        top: props.top,
+        right: props.right,
       }}
     >
       <Box sx={{ position: "relative" }}>
