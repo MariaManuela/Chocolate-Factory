@@ -6,6 +6,8 @@ import MoviePicture from "./MoviePicture.jsx";
 import ScoreChip from "./ScoreChip.jsx";
 import { useSelector } from "react-redux";
 import MovieDescription from "./MovieDescription.jsx";
+import Actor from "./Actor.jsx";
+import Cast from "./Cast.jsx";
 
 export default function MovieDetailsContainer({
   posterPath,
@@ -30,113 +32,120 @@ export default function MovieDetailsContainer({
 
   console.log(title);
   return (
-    <Grid
-      sx={{
-        background: "rgb(48 116 236 / 10%)",
-        padding: "20px",
-        width: "100%",
-        height: "550px",
-        position: "relative",
-        overflow: "hidden",
-        margin: "0",
-        display: "flex",
-        justifyContent: "center",
-        objectFit: "contain",
-        height: "100%",
-        width: "100%",
-        backgroundPositionY: "center",
-        backgroundRepeat: "no-repeat, no-repeat, repeat-x",
-        height: "100%",
-        backgroundSize: "cover",
-        backgroundPosition: "right 20% bottom 70%",
-        background: `linear-gradient(to bottom,rgb(58 59 72 / 90%), rgb(11 7 38)), url(${backgroundImage})`,
-      }}
-    >
-      <Container sx={{ display: "flex" }}>
-        <Grid>
-          <MoviePicture
-            className="display-image"
-            key={id}
-            posterPath={posterPath}
-          />
-        </Grid>
-
-        <Grid
-          sx={{
-            width: "80%",
-            display: "flex",
-            justifyContent: "flex-start",
-            margin: "30px",
-            alignItems: "center",
-            position: "relative",
-          }}
-        >
-          <Grid sx={{ position: "absolute", top: "100px", marginTop: "10px" }}>
-            <Typography
-              sx={{
-                color: "white",
-                position: "relative",
-                fontSize: "30px",
-                fontFamily: "gill sans, sans-serif",
-                color: "#ffefd3",
-              }}
-            >
-              {title}
-            </Typography>
+    <>
+      <Grid
+        sx={{
+          background: "rgb(48 116 236 / 10%)",
+          padding: "20px",
+          width: "100%",
+          height: "550px",
+          position: "relative",
+          overflow: "hidden",
+          margin: "0",
+          display: "flex",
+          justifyContent: "center",
+          objectFit: "contain",
+          height: "100%",
+          width: "100%",
+          backgroundPositionY: "center",
+          backgroundRepeat: "no-repeat, no-repeat, repeat-x",
+          height: "100%",
+          backgroundSize: "cover",
+          backgroundPosition: "right 20% bottom 70%",
+          background: `linear-gradient(to bottom,rgb(58 59 72 / 90%), rgb(11 7 38)), url(${backgroundImage})`,
+        }}
+      >
+        <Container sx={{ display: "flex" }}>
+          <Grid>
+            <MoviePicture
+              className="display-image"
+              key={id}
+              posterPath={posterPath}
+            />
           </Grid>
-          <ScoreChip
-            position="relative"
-            className="score-chip-details"
-            style={{ height: "80px", width: "80px" }}
-            value={voteAverage}
-          />
-          <Typography
-            variant="caption"
-            component="div"
-            color="text.secondary"
+
+          <Grid
             sx={{
-              color: "#fff",
-              fontFamily: "gill sans, sans-serif",
-              fontSize: "10px",
-              fontWeight: "bolder",
-              lineHeight: "10px",
-              textTransform: "uppercase",
-              textAlign: "center",
-              letterSpacing: "-1px",
-              textShadow: "0 0 1px #001b2e, 1px 2px 1px #001b2e",
-              position: "absolute",
-              left: "85px",
-              color: "#ffefd3",
+              width: "80%",
+              display: "flex",
+              justifyContent: "flex-start",
+              margin: "30px",
+              alignItems: "center",
+              position: "relative",
             }}
           >
-            Vote average
-          </Typography>
-          <HeartButton className="heart-button" />
-          <Grid sx={{ position: "absolute", top: "350px", marginTop: "10px" }}>
+            <Grid
+              sx={{ position: "absolute", top: "100px", marginTop: "10px" }}
+            >
+              <Typography
+                sx={{
+                  color: "white",
+                  position: "relative",
+                  fontSize: "30px",
+                  fontFamily: "gill sans, sans-serif",
+                  color: "#ffefd3",
+                }}
+              >
+                {title}
+              </Typography>
+            </Grid>
+            <ScoreChip
+              position="relative"
+              className="score-chip-details"
+              style={{ height: "80px", width: "80px" }}
+              value={voteAverage}
+            />
             <Typography
+              variant="caption"
+              component="div"
+              color="text.secondary"
               sx={{
-                color: "white",
-                position: "relative",
+                color: "#fff",
                 fontFamily: "gill sans, sans-serif",
+                fontSize: "10px",
+                fontWeight: "bolder",
+                lineHeight: "10px",
+                textTransform: "uppercase",
+                textAlign: "center",
+                letterSpacing: "-1px",
+                textShadow: "0 0 1px #001b2e, 1px 2px 1px #001b2e",
+                position: "absolute",
+                left: "85px",
                 color: "#ffefd3",
               }}
             >
-              Overview
+              Vote average
             </Typography>
-            <Typography
-              sx={{
-                color: "white",
-                fontStyle: "italic",
-                padding: "10px",
-                fontFamily: "gill sans, sans-serif",
-                color: "#ffefd3",
-              }}
+            <HeartButton className="heart-button" />
+            <Grid
+              sx={{ position: "absolute", top: "350px", marginTop: "10px" }}
             >
-              {description}
-            </Typography>
+              <Typography
+                sx={{
+                  color: "white",
+                  position: "relative",
+                  fontFamily: "gill sans, sans-serif",
+                  color: "#ffefd3",
+                }}
+              >
+                Overview
+              </Typography>
+              <Typography
+                sx={{
+                  color: "white",
+                  fontStyle: "italic",
+                  padding: "10px",
+                  fontFamily: "gill sans, sans-serif",
+                  color: "#ffefd3",
+                }}
+              >
+                {description}
+              </Typography>
+            </Grid>
           </Grid>
-        </Grid>
-      </Container>
-    </Grid>
+        </Container>
+      </Grid>
+      <Cast movieIdProp={movieId} />
+    </>
   );
 }
