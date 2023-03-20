@@ -67,6 +67,7 @@ export default function BannerPictureContainer() {
           );
         })}
       </Grid>
+
       {/* </Container> */}
       {/* </Grid> */}
     </>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import * as Constans from "../constants/Constants.jsx";
 import { useSelector, useDispatch } from "react-redux";
 import { setBannerBackgroundImage } from "../redux/actions/movieActions";
+import SearchBar from "./SearchBar.jsx";
 
 export default function BannerPicture(props) {
   const [img, setImg] = useState();
@@ -21,6 +22,8 @@ export default function BannerPicture(props) {
 
   return (
     <div>
+      <div className="blur-front "></div>
+
       <img src={img} className={props.className}></img>
     </div>
   );
