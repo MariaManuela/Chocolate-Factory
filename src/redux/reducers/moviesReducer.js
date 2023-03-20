@@ -5,6 +5,9 @@ const initialState = {
   movieBackgroundPicture: {
     movieBackgroundSrc: null,
   },
+  randomBannerImage: {
+    randomBannerImageSrc: [],
+  },
   movieDetails: {
     movieData: [],
   },
@@ -38,6 +41,13 @@ export default function moviesReducer(state = initialState, action) {
         ...state,
         movieDetails: {
           movieData: action.payload.data,
+        },
+      };
+    case MovieAction.RANDOM_IMAGE_RENDER:
+      return {
+        ...state,
+        randomBannerImage: {
+          randomBannerImageSrc: action.payload.data,
         },
       };
 

@@ -27,3 +27,10 @@ export const displayMovieDetails = (data) => {
     payload: { data },
   };
 };
+
+export const setWelcomePageBanner = (data) => {
+  return {
+    type: MovieAction.RANDOM_IMAGE_RENDER,
+    payload: { data },
+  };
+};
