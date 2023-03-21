@@ -4,6 +4,7 @@ import { Container } from "@mui/system";
 import React from "react";
 import { useSelector } from "react-redux";
 import BannerPicture from "./BannerPicture.jsx";
+import SearchBar from "./SearchBar.jsx";
 
 export default function BannerPictureContainer() {
   const backgroundImage = useSelector((state) => {
