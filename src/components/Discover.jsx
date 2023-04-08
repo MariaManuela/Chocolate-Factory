@@ -4,7 +4,12 @@ import Movie from "./Movie.jsx";
 import MovieCarousel from "./Carousel.jsx";
 import { RoutingContext, pagesMapping } from "../routing/Routing.js";
 import { useDispatch } from "react-redux";
-import { displayMovieDetails } from "../redux/actions/movieActions";
+import {
+  displayMovieDetails,
+  setBannerBackgroundImage,
+  setWelcomePageBanner,
+} from "../redux/actions/movieActions";
+import BannerPicture from "./BannerPicture.jsx";
 
 export default function Discover() {
   const [movies, setMovies] = useState([]);
@@ -22,6 +27,7 @@ export default function Discover() {
           .then((data) => {
             setMovies(data);
             dispatch(displayMovieDetails(data.results));
+            dispatch(setWelcomePageBanner(data.results));
           });
       } catch (error) {
         console.log("error", error);
@@ -33,7 +39,6 @@ export default function Discover() {
 
   return (
     <div className="discover-movie-part">
-      <MovieCarousel />
       <div
         className="discover-movies-container"
         style={{ width: "80%", overflow: "auto", scrollBehavior: "smooth" }}

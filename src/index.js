@@ -7,6 +7,7 @@ import App from "./App";
 import ErrorPage from "./components/ErrorPage.jsx";
 import Discover from "./components/Discover.jsx";
 import MoviePage from "./components/MoviePage.jsx";
+import BannerPictureContainer from "./components/BannerPictureContainer.jsx";
 
 const rootElement = document.getElementById("app");
 const root = createRoot(rootElement);
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/",
-        element: <Discover />,
+        element: [<BannerPictureContainer />, <Discover />],
       },
     ],
   },

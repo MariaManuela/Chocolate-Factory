@@ -11,7 +11,7 @@ export default function Navigation() {
       <Container maxWidth="lg">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: "flex", md: "flex" }, mr: 1 }} />
-          <SearchBar />
+          {/* <SearchBar /> */}
         </Toolbar>
       </Container>
     </AppBar>
