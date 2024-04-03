@@ -41,7 +41,7 @@ export default function Actor({ actor, actorImg }) {
         component="div"
         color="text.secondary"
         sx={{
-          color: "black",
+          color: "#ffefd3",
           fontFamily: "Arial, sans-serif",
           fontSize: "14px",
           fontWeight: "bold",
@@ -68,7 +68,7 @@ export default function Actor({ actor, actorImg }) {
         component="div"
         color="text.secondary"
         sx={{
-          color: "black",
+          color: "#ffefd3",
           fontFamily: "Arial, sans-serif",
           fontSize: "12px",
           fontWeight: "bold",

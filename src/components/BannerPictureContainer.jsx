@@ -3,10 +3,14 @@ import { Grid } from "@mui/material";
 import { Container } from "@mui/system";
 import React from "react";
 import { useSelector } from "react-redux";
+import Banner from "./Banner.jsx";
 import BannerPicture from "./BannerPicture.jsx";
 import SearchBar from "./SearchBar.jsx";
 
 export default function BannerPictureContainer() {
+  const padding = "20px";
+  const halfPadding = "10px";
+
   const backgroundImage = useSelector((state) => {
     return state.moviesReducer.movieBackgroundPicture.movieBackgroundSrc;
   });
@@ -29,48 +33,39 @@ export default function BannerPictureContainer() {
 
   return (
     <>
-      {/* <Grid
-        sx={{
-          background: "rgb(48 116 236 / 10%)",
-          padding: "20px",
-          width: "100%",
-          height: "550px",
-          position: "relative",
-          overflow: "hidden",
-          margin: "0",
-          display: "flex",
-          justifyContent: "center",
-          objectFit: "contain",
-          height: "100%",
-          width: "100%",
-          backgroundPositionY: "center",
-          backgroundRepeat: "no-repeat, no-repeat, repeat-x",
-          height: "100%",
-          backgroundSize: "cover",
-          backgroundPosition: "right 20% bottom 70%",
-          background: `linear-gradient(to bottom,rgb(58 59 72 / 90%), rgb(11 7 38))`,
-        }}
-      > */}
-      {/* <Container sx={{ display: "flex" }}> */}
-      <Grid
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
-        {imagePath.map((elem) => {
-          return (
-            <BannerPicture
-              key={elem}
-              posterPath={elem}
-              className="first-page-banner"
-            />
-          );
-        })}
+      <Grid>
+        <Grid
+          sx={{
+            "& img": {
+              filter:
+                "brightness(40%) contrast(100%) sepia(100%) hue-rotate(500deg) saturate(150%)",
+              opacity: 1.0,
+            },
+          }}
+        >
+          <Grid
+            sx={{
+              zIndex: 1, // Ensure this overlay is above the main grid
+              position: "absolute",
+              display: "flex",
+              justifyContent: "center",
+              width: "100%",
+              // top: "350px",
+            }}
+          >
+            <Banner className="search-grid" />
+          </Grid>
+          {imagePath.map((elem) => {
+            return (
+              <BannerPicture
+                key={elem}
+                posterPath={elem}
+                className="first-page-banner"
+              />
+            );
+          })}
+        </Grid>
       </Grid>
-
-      {/* </Container> */}
-      {/* </Grid> */}
     </>
   );
 }
