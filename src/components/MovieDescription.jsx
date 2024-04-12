@@ -8,7 +8,7 @@ export default function MovieDescription(props) {
       component="div"
       color="text.secondary"
       sx={{
-        color: "black",
+        color: "#ffefd3",
         fontFamily: "Arial, sans-serif",
         fontSize: "12px",
         fontWeight: "bold",
