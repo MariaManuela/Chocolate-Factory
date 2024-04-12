@@ -15,7 +15,7 @@ export default function SearchBar() {
       <FormControl
         sx={{
           broderRadius: "30px",
-          width: "100%",
+          width: "80%",
         }}
       >
         <OutlinedInput

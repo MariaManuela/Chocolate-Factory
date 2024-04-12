@@ -20,7 +20,8 @@ export default function BannerPicture(props) {
 
   return (
     <Grid>
-      <Banner imgSrc={img} className={props.className} />
+      {/* <Banner imgSrc={img} className={props.className} /> */}
+      <img src={img} className={props.className}></img>
     </Grid>
   );
 }
