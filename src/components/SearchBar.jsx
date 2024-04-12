@@ -19,12 +19,14 @@ export default function SearchBar() {
         }}
       >
         <OutlinedInput
-          className="search-bar"
           id="search-bar"
           onChange={handleChange}
           value={search}
           sx={{
             borderRadius: "30px",
+            height: "35px",
+            backgroundColor: "white",
+            width: "100%",
           }}
         />
       </FormControl>

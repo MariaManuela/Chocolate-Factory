@@ -8,7 +8,15 @@ import ActorPicture from "./ActorPicture.jsx";
 
 export default function Actor({ actor, actorImg }) {
   return (
-    <Grid sx={{ paddingRight: "10px" }} className="movies-item" key={actor.id}>
+    <Grid
+      sx={{
+        paddingRight: "10px",
+        padding: "5px",
+        fontsize: "10px",
+        textAlign: "center",
+      }}
+      key={actor.id}
+    >
       <Grid
         className="progress-container"
         sx={{

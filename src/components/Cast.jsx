@@ -3,6 +3,7 @@ import Movie from "./Movie.jsx";
 import React, { useState, useEffect } from "react";
 import * as Constans from "../constants/Constants.jsx";
 import Actor from "./Actor.jsx";
+import { Grid } from "@mui/material";
 
 export default function Cast(movieIdProp) {
   let { movieId } = useParams();
@@ -27,13 +28,16 @@ export default function Cast(movieIdProp) {
   }, []);
 
   return (
-    <div
-      className="discover-movies-container"
-      style={{
+    <Grid
+      sx={{
         width: "50%",
         marginLeft: "50px",
         overflow: "auto",
         scrollBehavior: "smooth",
+        display: "inline-flex",
+        justifyContent: "space-between",
+        flexWrap: "nowrap",
+        height: "45vh",
       }}
     >
       {actors?.cast?.map((actor) => {
@@ -41,6 +45,6 @@ export default function Cast(movieIdProp) {
           <Actor key={actor.id} actor={actor} actorImg={actor.profile_path} />
         );
       })}
-    </div>
+    </Grid>
   );
 }
