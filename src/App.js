@@ -4,20 +4,22 @@ import { Provider } from "react-redux";
 import store from "./redux/store.js";
 
 import { Outlet } from "react-router-dom";
-
-import "./App.scss";
-import { Opacity } from "@mui/icons-material";
+import { Grid } from "@mui/material";
 
 function App() {
   return (
-    <div className="first-page-style">
+    <Grid
+      sx={{
+        backgroundColor: "#0c0c0c",
+      }}
+    >
       <Provider store={store}>
         <Navigation />
         <div id="first-page">
           <Outlet />
         </div>
       </Provider>
-    </div>
+    </Grid>
   );
 }
 

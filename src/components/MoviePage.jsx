@@ -2,9 +2,6 @@ import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import * as Constans from "../constants/Constants.jsx";
 import MovieDetailsContainer from "./MovieDetailsContainer.jsx";
-import Actor from "./Actor.jsx";
-import Cast from "./Cast.jsx";
-import { Grid } from "@mui/material";
 
 export default function MoviePage(props) {
   let { movieId } = useParams();

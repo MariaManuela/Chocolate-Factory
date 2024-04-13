@@ -2,7 +2,6 @@ import React from "react";
 import { CircularProgress } from "@mui/material";
 import { Typography } from "@mui/material";
 import { Box } from "@mui/material";
-import { color } from "@mui/system";
 
 export default function ScoreChip(props) {
   const MIN = 0;
