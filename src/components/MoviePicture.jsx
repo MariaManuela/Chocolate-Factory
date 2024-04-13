@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import * as Constans from "../constants/Constants.jsx";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setBannerBackgroundImage } from "../redux/actions/movieActions";
+import { Grid } from "@mui/material";
+import { Box } from "@mui/system";
 
 export default function MoviePicture(props) {
   const [img, setImg] = useState();
@@ -22,8 +24,8 @@ export default function MoviePicture(props) {
   }, []);
 
   return (
-    <div>
-      <img src={img} className={props.className}></img>
-    </div>
+    <Grid>
+      <Box component="img" src={img} sx={props.sx} />
+    </Grid>
   );
 }

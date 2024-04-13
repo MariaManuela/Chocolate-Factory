@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { FormControl, OutlinedInput } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { Button } from "@mui/material";
@@ -19,12 +19,14 @@ export default function SearchBar() {
         }}
       >
         <OutlinedInput
-          className="search-bar"
           id="search-bar"
           onChange={handleChange}
           value={search}
           sx={{
             borderRadius: "30px",
+            height: "35px",
+            backgroundColor: "white",
+            width: "100%",
           }}
         />
       </FormControl>

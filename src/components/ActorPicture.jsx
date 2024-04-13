@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { setBannerBackgroundImage } from "../redux/actions/movieActions";
 import standardPicture from "../public/images/standard_profile_picture.jpeg";
 import { width } from "@mui/system";
+import { Box } from "@mui/joy";
 
 export default function ActorPicture(props) {
   const [img, setImg] = useState();
@@ -23,13 +24,14 @@ export default function ActorPicture(props) {
   return (
     <div>
       {props.profilePath !== null ? (
-        <img src={img} className={props.className}></img>
+        <Box component="img" src={img} sx={props.sx} />
       ) : (
-        <img
-          src={standardPicture}
-          className={props.className}
-          style={{ height: "191px", width: "130px" }}
-        ></img>
+        // <img
+        //   src={standardPicture}
+        //   className={props.className}
+        //   style={{ height: "191px", width: "130px" }}
+        // ></img>
+        <Box component="img" src={standardPicture} sx={props.sx} />
       )}
     </div>
   );

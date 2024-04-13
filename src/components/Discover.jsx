@@ -1,15 +1,13 @@
 import React, { useState, useEffect, useContext } from "react";
 import * as Constans from "../constants/Constants.jsx";
 import Movie from "./Movie.jsx";
-import MovieCarousel from "./Carousel.jsx";
-import { RoutingContext, pagesMapping } from "../routing/Routing.js";
+import { RoutingContext } from "../routing/Routing.js";
 import { useDispatch } from "react-redux";
 import {
   displayMovieDetails,
-  setBannerBackgroundImage,
   setWelcomePageBanner,
 } from "../redux/actions/movieActions";
-import BannerPicture from "./BannerPicture.jsx";
+import { Grid } from "@mui/material";
 
 export default function Discover() {
   const [movies, setMovies] = useState([]);
@@ -38,10 +36,24 @@ export default function Discover() {
   }, []);
 
   return (
-    <div className="discover-movie-part">
-      <div
-        className="discover-movies-container"
-        style={{ width: "80%", overflow: "auto", scrollBehavior: "smooth" }}
+    <Grid
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "baseline",
+        marginTop: "10px",
+      }}
+    >
+      <Grid
+        sx={{
+          width: "80%",
+          overflow: "auto",
+          scrollBehavior: "smooth",
+          display: "inline-flex",
+          justifyContent: "space-between",
+          flexWrap: "nowrap",
+          height: "45vh",
+        }}
       >
         {movies?.results?.map((movie) => {
           return (
@@ -53,7 +65,7 @@ export default function Discover() {
             />
           );
         })}
-      </div>
-    </div>
+      </Grid>
+    </Grid>
   );
 }

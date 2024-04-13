@@ -1,20 +1,10 @@
-import { CenterFocusStrong } from "@mui/icons-material";
 import { Grid } from "@mui/material";
-import { Container } from "@mui/system";
 import React from "react";
 import { useSelector } from "react-redux";
 import Banner from "./Banner.jsx";
 import BannerPicture from "./BannerPicture.jsx";
-import SearchBar from "./SearchBar.jsx";
 
 export default function BannerPictureContainer() {
-  const padding = "20px";
-  const halfPadding = "10px";
-
-  const backgroundImage = useSelector((state) => {
-    return state.moviesReducer.movieBackgroundPicture.movieBackgroundSrc;
-  });
-
   const imagePath = useSelector((state) => {
     let imagePathList = [];
     const pathList = state.moviesReducer.randomBannerImage.randomBannerImageSrc;
@@ -40,29 +30,50 @@ export default function BannerPictureContainer() {
               filter:
                 "brightness(40%) contrast(100%) sepia(100%) hue-rotate(500deg) saturate(150%)",
               opacity: 1.0,
+
+              height: "50vh",
+              width: "100vw",
+              objectFit: "cover",
+              objectPosition: "center",
+              borderBottomLeftRadius: "5px",
+              borderBottomRightRadius: "5px",
+              margin: "0 auto",
+
+              [`@media screen and (max-width: 767px)`]: {
+                margin: "0",
+                width: "100vw",
+                maxWidth: "unset",
+              },
+
+              [`@media screen and (min-width: 768px)`]: {
+                display: "flex",
+                justifyContent: "center",
+                maxWidth: "90rem",
+              },
             },
           }}
         >
           <Grid
             sx={{
-              zIndex: 1, // Ensure this overlay is above the main grid
+              zIndex: 1,
               position: "absolute",
               display: "flex",
               justifyContent: "center",
-              width: "100%",
-              // top: "350px",
+              width: 1,
+
+              "@media screen and (max-width: 767px)": {
+                marginTop: "250px",
+              },
+
+              "@media screen and (min-width: 768px)": {
+                marginTop: "350px",
+              },
             }}
           >
-            <Banner className="search-grid" />
+            <Banner />
           </Grid>
           {imagePath.map((elem) => {
-            return (
-              <BannerPicture
-                key={elem}
-                posterPath={elem}
-                className="first-page-banner"
-              />
-            );
+            return <BannerPicture key={elem} posterPath={elem} />;
           })}
         </Grid>
       </Grid>
