@@ -1,8 +1,5 @@
 import { Grid, Typography } from "@mui/material";
 import React from "react";
-import ScoreChip from "./ScoreChip.jsx";
-import { Link } from "react-router-dom";
-import MovieDescription from "./MovieDescription.jsx";
 import Button from "@mui/material/Button";
 import ActorPicture from "./ActorPicture.jsx";
 
@@ -18,9 +15,10 @@ export default function Actor({ actor, actorImg }) {
       key={actor.id}
     >
       <Grid
-        className="progress-container"
         sx={{
           position: "relative",
+          display: "flex",
+          marginTop: "10px",
         }}
       >
         <Button
@@ -43,7 +41,16 @@ export default function Actor({ actor, actorImg }) {
           </Link> */}
         </Button>
       </Grid>
-      <ActorPicture className="discover-actor-photo" profilePath={actorImg} />
+      <ActorPicture
+        sx={{
+          height: "190px",
+          borderRadius: "5px",
+          boxShadow:
+            "rgba(14, 30, 37, 0.12) 0px 2px 4px 0px," +
+            "rgba(14, 30, 37, 0.32) 0px 2px 16px 0px",
+        }}
+        profilePath={actorImg}
+      />
       <Typography
         variant="caption"
         component="div"

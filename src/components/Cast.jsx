@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom";
-import Movie from "./Movie.jsx";
 import React, { useState, useEffect } from "react";
 import * as Constans from "../constants/Constants.jsx";
 import Actor from "./Actor.jsx";

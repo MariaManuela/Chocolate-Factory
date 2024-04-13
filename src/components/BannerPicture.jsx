@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import SearchBar from "./SearchBar.jsx";
 import { Grid } from "@mui/material";
-import Banner from "./Banner.jsx";
 
 export default function BannerPicture(props) {
   const [img, setImg] = useState();

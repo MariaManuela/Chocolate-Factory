@@ -1,20 +1,10 @@
-import { CenterFocusStrong } from "@mui/icons-material";
 import { Grid } from "@mui/material";
-import { Container } from "@mui/system";
 import React from "react";
 import { useSelector } from "react-redux";
 import Banner from "./Banner.jsx";
 import BannerPicture from "./BannerPicture.jsx";
-import SearchBar from "./SearchBar.jsx";
 
 export default function BannerPictureContainer() {
-  const padding = "20px";
-  const halfPadding = "10px";
-
-  const backgroundImage = useSelector((state) => {
-    return state.moviesReducer.movieBackgroundPicture.movieBackgroundSrc;
-  });
-
   const imagePath = useSelector((state) => {
     let imagePathList = [];
     const pathList = state.moviesReducer.randomBannerImage.randomBannerImageSrc;

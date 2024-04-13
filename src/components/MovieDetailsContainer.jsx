@@ -1,12 +1,10 @@
-import { Grid, Grow, Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import React from "react";
 import HeartButton from "./HeartButton.jsx";
 import MoviePicture from "./MoviePicture.jsx";
 import ScoreChip from "./ScoreChip.jsx";
 import { useSelector } from "react-redux";
-import MovieDescription from "./MovieDescription.jsx";
-import Actor from "./Actor.jsx";
 import Cast from "./Cast.jsx";
 
 export default function MovieDetailsContainer({
@@ -58,7 +56,12 @@ export default function MovieDetailsContainer({
         <Container sx={{ display: "flex" }}>
           <Grid>
             <MoviePicture
-              className="display-image"
+              sx={{
+                objectFit: "scale-down",
+                width: "100%",
+                height: "100%",
+                boxShadow: "10px 10px 25px rgb(0, 0, 0)",
+              }}
               key={id}
               posterPath={posterPath}
             />
@@ -91,7 +94,7 @@ export default function MovieDetailsContainer({
             </Grid>
             <ScoreChip
               position="relative"
-              className="score-chip-details"
+              sx={{ height: "200px" }}
               style={{ height: "80px", width: "80px" }}
               value={voteAverage}
             />
@@ -116,7 +119,14 @@ export default function MovieDetailsContainer({
             >
               Vote average
             </Typography>
-            <HeartButton className="heart-button" />
+            <HeartButton
+              sx={{
+                height: "30px",
+                width: "30px",
+                backgroundColor: "#001b2e",
+                color: "white",
+              }}
+            />
             <Grid
               sx={{ position: "absolute", top: "350px", marginTop: "10px" }}
             >

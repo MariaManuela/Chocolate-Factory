@@ -4,8 +4,6 @@ import { Provider } from "react-redux";
 import store from "./redux/store.js";
 
 import { Outlet } from "react-router-dom";
-
-import "./App.scss";
 import { Grid } from "@mui/material";
 
 function App() {

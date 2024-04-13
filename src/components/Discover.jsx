@@ -36,7 +36,14 @@ export default function Discover() {
   }, []);
 
   return (
-    <Grid className="discover-movie-part">
+    <Grid
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "baseline",
+        marginTop: "10px",
+      }}
+    >
       <Grid
         sx={{
           width: "80%",
