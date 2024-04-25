@@ -5,6 +5,13 @@ import Banner from "./Banner.jsx";
 import BannerPicture from "./BannerPicture.jsx";
 
 export default function BannerPictureContainer() {
+  const padding = "20px";
+  const halfPadding = "10px";
+
+  const backgroundImage = useSelector((state) => {
+    return state.moviesReducer.movieBackgroundPicture.movieBackgroundSrc;
+  });
+
   const imagePath = useSelector((state) => {
     let imagePathList = [];
     const pathList = state.moviesReducer.randomBannerImage.randomBannerImageSrc;

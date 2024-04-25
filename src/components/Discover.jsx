@@ -8,6 +8,8 @@ import {
   setWelcomePageBanner,
 } from "../redux/actions/movieActions";
 import { Grid } from "@mui/material";
+import Trailer from "./Trailer.jsx";
+import DiscoverTrailers from "./DiscoverTrailers.jsx";
 
 export default function Discover() {
   const [movies, setMovies] = useState([]);

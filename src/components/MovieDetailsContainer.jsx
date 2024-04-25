@@ -43,14 +43,11 @@ export default function MovieDetailsContainer({
           display: "flex",
           justifyContent: "center",
           objectFit: "contain",
-          height: "100%",
-          width: "100%",
           backgroundPositionY: "center",
           backgroundRepeat: "no-repeat, no-repeat, repeat-x",
-          height: "100%",
           backgroundSize: "cover",
           backgroundPosition: "right 20% bottom 70%",
-          background: `linear-gradient(to bottom,rgb(58 59 72 / 90%), rgb(11 7 38)), url(${backgroundImage})`,
+          backgroundImage: `linear-gradient(to bottom, rgba(64, 224, 208, 0.5), rgba(11, 7, 38)), url(${backgroundImage})`,
         }}
       >
         <Container sx={{ display: "flex" }}>
