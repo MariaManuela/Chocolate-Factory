@@ -34,3 +34,10 @@ export const setWelcomePageBanner = (data) => {
     payload: { data },
   };
 };
+
+export const setMovieIds = (ids) => {
+  return {
+    type: MovieAction.SET_MOVIE_IDS,
+    payload: { ids },
+  };
+};

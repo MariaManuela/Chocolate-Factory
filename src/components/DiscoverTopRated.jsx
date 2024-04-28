@@ -2,22 +2,23 @@ import { Typography } from "@mui/material";
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import Trailer from "./Trailer.jsx";
 import { Grid } from "@mui/joy";
+import * as Constans from "../constants/Constants.jsx";
+import Movie from "./Movie.jsx";
 
-export default function DiscoverTrailers(movieIdProp) {
+export default function DiscoverTopRated() {
+  const [populars, setPopulars] = useState([populars]);
   let { movieId } = useParams();
-  const [trailers, setTrailers] = useState([trailers]);
 
   useEffect(() => {
-    const url = ` https://api.themoviedb.org/3/movie/${movieId}/videos`;
+    const url = `https://api.themoviedb.org/3/movie/top_rated?api_key=${Constans.API_KEY}`;
 
     const fetchData = async () => {
       try {
         const response = await fetch(url)
           .then((response) => response.json())
           .then((data) => {
-            setTrailers(data);
+            setPopulars(data);
           });
       } catch (error) {
         console.log("error", error);
@@ -44,12 +45,19 @@ export default function DiscoverTrailers(movieIdProp) {
           display: "inline-flex",
           justifyContent: "space-between",
           flexWrap: "nowrap",
-          height: "45vh",
         }}
       >
-        {trailers?.results?.map((trailer) => {
-          return <Trailer key={trailer.id} trailer={trailer} />;
+        {populars?.results?.map((movie) => {
+          return (
+            <Movie
+              key={movie.id}
+              movie={movie}
+              backgroundImg={movie.poster_path}
+              chip
+            />
+          );
         })}
+        ;
       </Grid>
     </Grid>
   );

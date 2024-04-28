@@ -11,6 +11,7 @@ const initialState = {
   movieDetails: {
     movieData: [],
   },
+  movieIds: [],
 };
 
 export default function moviesReducer(state = initialState, action) {
@@ -49,6 +50,11 @@ export default function moviesReducer(state = initialState, action) {
         randomBannerImage: {
           randomBannerImageSrc: action.payload.data,
         },
+      };
+    case MovieAction.SET_MOVIE_IDS:
+      return {
+        ...state,
+        movieIds: action.payload.data,
       };
 
     default:

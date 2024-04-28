@@ -8,8 +8,8 @@ import {
   setWelcomePageBanner,
 } from "../redux/actions/movieActions";
 import { Grid } from "@mui/material";
-import Trailer from "./Trailer.jsx";
-import DiscoverTrailers from "./DiscoverTrailers.jsx";
+import { setMovieIds } from "../redux/actions/movieActions";
+import { useSelector } from "react-redux";
 
 export default function Discover() {
   const [movies, setMovies] = useState([]);
@@ -19,7 +19,6 @@ export default function Discover() {
 
   useEffect(() => {
     const url = `https://api.themoviedb.org/3/discover/movie?api_key=${Constans.API_KEY}`;
-
     const fetchData = async () => {
       try {
         const response = await fetch(url)
@@ -54,10 +53,10 @@ export default function Discover() {
           display: "inline-flex",
           justifyContent: "space-between",
           flexWrap: "nowrap",
-          height: "45vh",
         }}
       >
         {movies?.results?.map((movie) => {
+          console.log("DICOVER: " + movie.poster_path);
           return (
             <Movie
               key={movie.id}

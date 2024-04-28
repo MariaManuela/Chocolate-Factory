@@ -4,4 +4,5 @@ export const MovieAction = {
   SET_BANNER_BACKGROUND_IMAGE: "bannerImg/setBannerBackgroundImage",
   DISPLAY_MOVIE_DETAILS: "movieDetails/displayMovieDetails",
   RANDOM_IMAGE_RENDER: "banner/randomImageRender",
+  SET_MOVIE_IDS: "movieDetails/setMovieIds",
 };
